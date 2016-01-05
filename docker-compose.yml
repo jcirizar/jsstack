@@ -1,0 +1,12 @@
+app:
+  build: .
+  environment:
+    - VIRTUAL_HOST=nunpress.com,www.nupress.com
+  volumes_from:
+    - data
+  restart: always
+
+data:
+  extends:
+    file: base.yml
+    service: data
