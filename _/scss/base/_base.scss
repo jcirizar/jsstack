@@ -1,8 +1,15 @@
 html{
   height: 100%;
 }
+
 body {
   min-height: 100%;
   font-size: 62.5%;
+  line-height: 1;
+}
 
+a {
+  &:hover {
+
+  }
 }

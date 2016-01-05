@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "npm install -g nodemon gulp && npm install"
+    "dev": "npm install -g nodemon gulp bower && npm install"
   },
   "dependencies": {
     "body-parser": "~1.13.2",

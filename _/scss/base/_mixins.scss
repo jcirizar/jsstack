@@ -1,0 +1,25 @@
+// breakpoints
+$bp-desktop: 960px;
+$bp-tablet: 601px; // lg g 8.0
+
+$desktop-query: '(min-width: #{$bp-desktop})';
+$just-tablet-query: '(min-device-width: #{$bp-tablet}) and (max-width: #{$bp-desktop})'; // only tablet
+$tablet-query: '(min-device-width: #{$bp-tablet})'; // tablet to infinite
+
+@mixin desktop {
+  @media only screen and #{$desktop-query} {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and #{$tablet-query} {
+    @content;
+  }
+}
+
+@mixin e($name) {
+  @at-root &__#{$name} {
+    @content;
+  }
+}

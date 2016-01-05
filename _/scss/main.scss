@@ -1,2 +1,7 @@
-@import "misc/reset";
-@import "misc/base";
+@import "base/reset";
+@import "base/base";
+@import "base/variables";
+@import "base/mixins";
+
+@import "base/containers";
+@import "base/menus";
