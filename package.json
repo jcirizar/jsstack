@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "npm install -g nodemon gulp && npm install"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -17,5 +18,14 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
+    "autoprefixer": "^6.2.3",
+    "css-mqpacker": "^4.0.0",
+    "csswring": "^4.1.1",
+    "gulp": "^3.9.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-postcss": "^6.0.1",
+    "gulp-sass": "^2.1.1",
+    "run-sequence": "^1.1.5"
   }
 }

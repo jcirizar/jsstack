@@ -1,0 +1,7 @@
+{
+  "events": {
+    "restart": "osascript -e 'display notification \"App restarted\" with title \"Nodemon\"'"
+  },
+  "ext": "js html",
+  "legacyWatch" : true
+}
