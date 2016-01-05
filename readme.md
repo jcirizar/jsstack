@@ -9,3 +9,8 @@
     docker exec -it [App Container name or id] bash
 ####Install gulp and nodemon globally and later npm install
     npm run dev
+
+## Production:
+
+### Requires docker-compose and nginx-proxy on front.
+    docker-compose build && docker-compose up -d --force-recreate
