@@ -5,3 +5,7 @@
     eval "$(docker-machine env nunpress)"
 ###build and run development containers
     docker-compose -f dev.yml up -d
+####get inside app container to run gulp etc
+    docker exec -it [App Container name or id] bash
+####Install gulp and nodemon globally and later npm install
+    npm run dev

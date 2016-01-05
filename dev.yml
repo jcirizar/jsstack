@@ -12,8 +12,6 @@ app:
   environment:
     - VIRTUAL_HOST=nunpress.app
     - VIRTUAL_PORT=3000
-  links:
-    - couchdb
   volumes_from:
     - data
 
