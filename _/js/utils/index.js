@@ -1,0 +1,1 @@
+export let logger = (message) => (console.log(message));

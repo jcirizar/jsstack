@@ -4,7 +4,11 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "npm install -g nodemon gulp bower && npm install"
+    "browserify": "browserify _/js/app.js -o dist/js/app.bundle.js -t [ babelify --presets [ es2015 ] ]",
+    "watchify": "browserify -d _/js/app.js -o src/js/app.bundle.js -t [ babelify --presets [ es2015 ] ]",
+    "server": "nodemon -L -e js --watch _/express --watch bin",
+    "dev:server": "concurrent 'npm run server' 'npm run sass'",
+    "sass": "node-sass -w  _/scss/main.scss | postcss --use autoprefixer -o src/css/main.min.css"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -14,18 +18,16 @@
     "express": "~4.13.1",
     "helmet": "^1.0.1",
     "morgan": "~1.6.1",
-    "nunjucks": "^2.2.0",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
-    "autoprefixer": "^6.2.3",
-    "css-mqpacker": "^4.0.0",
-    "csswring": "^4.1.1",
-    "gulp": "^3.9.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-nodemon": "^2.0.6",
-    "gulp-postcss": "^6.0.1",
-    "gulp-sass": "^2.1.1",
-    "run-sequence": "^1.1.5"
+    "autoprefixer": "^6.3.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "concurrently": "^1.0.0",
+    "node-sass": "^3.4.2",
+    "nodemon": "^1.8.1",
+    "postcss-cli": "^2.5.0"
   }
 }
