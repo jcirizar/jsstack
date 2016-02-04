@@ -5,13 +5,13 @@ app:
   working_dir: /app
   expose:
     - "3000"
-    - "5858"
+    - "3001"
   command: /bin/bash
   stdin_open: true
   tty: true
   environment:
     - VIRTUAL_HOST=nunpress.app
-    - VIRTUAL_PORT=3000
+    - VIRTUAL_PORT=3001
   volumes_from:
     - data
 
@@ -22,8 +22,3 @@ nginx:
     service: nginx
   environment:
     - DEFAULT_HOST=nunpress.app
-
-data:
-  extends:
-    file: base.yml
-    service: data
