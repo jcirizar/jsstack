@@ -7,9 +7,9 @@
     "browserify": "browserify _/js/app.js -o dist/js/app.bundle.js -t [ babelify --presets [ es2015 ] ]",
     "watchify": "watchify -d _/js/app.js -o src/js/app.bundle.js -t [ babelify --presets [ es2015 ] ]",
     "sass": "node-sass _/scss/main.scss | postcss --use autoprefixer --autoprefixer.browsers \"> 5%\" -o src/css/main.min.css",
-    "browserSync": "browser-sync start --no-ui --proxy http://localhost:3000 --port 3001 --reload-delay 2000 --files \"src/**/*.*\" ",
+    "browserSync": "browser-sync start --ws --no-ui --proxy http://localhost:3000 --port 3001 --reload-delay 3000 --files \"src/**/*.*\" ",
     "watch:server": "nodemon -L -e js --watch _/express --watch bin",
-    "watch:sass": "nodemon -e scss -w _/scss -x \"npm run sass\"",
+    "watch:sass": "nodemon -L -e scss -w _/scss -x \"npm run sass\"",
     "dev:server": "concurrent 'npm run watch:server' 'npm run watch:sass' 'npm run watchify' 'npm run browserSync'"
   },
   "dependencies": {
