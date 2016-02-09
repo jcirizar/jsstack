@@ -7,9 +7,11 @@ services:
     working_dir: /app
     ports:
       - "3000:3000"
+      - "3001:3001"
       - "3002:3002"
       - "9000:9000"
     command: /bin/bash
+    container_name: jsstack
     stdin_open: true
     tty: true
     environment:
