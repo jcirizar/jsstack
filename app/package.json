@@ -1,7 +1,6 @@
 {
-  "name": "nunpress",
-  "version": "0.0.0",
-  "private": true,
+  "name": "jsstack",
+  "version": "0.0.1",
   "scripts": {
     "start": "node ./bin/www",
     "postinstall": "npm run browserify && npm run sass",
