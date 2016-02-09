@@ -1,22 +1,16 @@
-app:
-  image: node:argon
-  volumes:
-    - .:/app
-  working_dir: /app
-  expose:
-    - "3000"
-    - "3001"
-  command: /bin/bash
-  stdin_open: true
-  tty: true
-  environment:
-    - VIRTUAL_HOST=nunpress.app
-    - VIRTUAL_PORT=3001
-
-
-nginx:
-  extends:
-    file: base.yml
-    service: nginx
-  environment:
-    - DEFAULT_HOST=nunpress.app
+version: '2'
+services:
+  app:
+    image: node:argon
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    ports:
+      - "3000:3000"
+      - "3002:3002"
+      - "9000:9000"
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+    environment:
+      - PORT=9000

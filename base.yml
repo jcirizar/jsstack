@@ -1,21 +1,17 @@
-app:
-  build: .
-  restart: always
+version: '2'
+services:
+  app:
+    build: app
+    restart: always
 
-nginx:
-  image: 'jwilder/nginx-proxy'
-  restart: always
-  container_name: nginx-proxy
-  volumes:
-    - /var/run/docker.sock:/tmp/docker.sock:ro
-    - ./vhost.d:/etc/nginx/vhost.d
-    - /etc/letsencrypt:/etc/letsencrypt
-  ports:
-    - "80:80"
-    - "443:443"
-
-data:
-  image: 'busybox:ubuntu'
-  command: /bin/true
-  volumes:
-    - '/containers_backup'
+  nginx:
+    image: 'jwilder/nginx-proxy'
+    restart: always
+    container_name: nginx-proxy
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./vhost.d:/etc/nginx/vhost.d
+      - /etc/letsencrypt:/etc/letsencrypt
+    ports:
+      - "80:80"
+      - "443:443"

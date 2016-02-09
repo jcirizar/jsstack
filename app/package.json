@@ -5,12 +5,17 @@
   "scripts": {
     "start": "node ./bin/www",
     "postinstall": "npm run browserify && npm run sass",
-    "browserify": "browserify _/js/app.js -o dist/js/app.bundle.js -t [ babelify --presets [ es2015 ] ]",
-    "sass": "node-sass _/scss/main.scss | postcss --use autoprefixer --autoprefixer.browsers \"> 5%\" -o src/css/main.min.css",
-    "watch:sync": "browser-sync start --ws --no-ui --proxy http://localhost:3000 --port 3001 --reload-delay 3000 --files \"src/**/*.*\" ",
+    "build:js": "browserify _/js/app.js -o dist/js/app.bundle.js -t [ babelify --presets [ es2015 ] ]",
+    "build:sass": "node-sass _/scss/main.scss | postcss --use autoprefixer --autoprefixer.browsers \"> 5%\" -o dist/css/main.min.css",
+    "dev:sass": "node-sass _/scss/main.scss | postcss --use autoprefixer --autoprefixer.browsers \"> 5%\" -o src/css/main.min.css",
+    "watch:sync": "browser-sync start --ws --proxy http://localhost:9000 --reload-delay 1000 --files \"src/**/*.*\" ",
     "watch:js": "watchify -d _/js/app.js -o src/js/app.bundle.js -t [ babelify --presets [ es2015 ] ]",
-    "watch:server": "nodemon -L -e js --watch _/express --watch bin",
-    "watch:sass": "nodemon -L -e scss -w _/scss -x \"npm run sass\"",
+    "watch:server": "nodemon -L -q -e js --watch _/express --watch bin",
+    "watch:sass": "nodemon -L -q -C -e scss -w _/scss -x \"npm run dev:sass\"",
+    "clean": "rm -rf dist",
+    "mkdir": "mkdir -p dist/css && mkdir -p dist/js",
+    "prebuild": "npm run clean && npm run mkdir",
+    "build": "cp src/index.html dist/ && npm-run-all -p build:*",
     "watch": "npm-run-all -p --silent watch:*"
   },
   "dependencies": {

@@ -95,9 +95,8 @@ body {
   width: 96rem;
   margin: 0 auto; }
 
-.something {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
+.page-home {
+  background-color: yellow; }
+  .page-home p {
+    font-size: 3rem; }
 
