@@ -3,7 +3,7 @@ services:
   app:
     build: app
     environment:
-      - VIRTUAL_HOST=nunpress.com,www.nupress.com
+      - VIRTUAL_HOST=jsstack.com,www.jsstack.com
     volumes_from:
       - data
     restart: always
