@@ -1,9 +1,12 @@
 version: '2'
 services:
   app:
-    image: node:argon
+    build:
+      context: ./app
+      dockerfile: DockerfileDev
     volumes:
       - ./app:/app
+      - $HOME/.aws:/root/.aws/
     working_dir: /app
     ports:
       - "3000:3000"

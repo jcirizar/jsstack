@@ -3,8 +3,7 @@
 
 var _utils = require('./utils');
 
-(0, _utils.logger)('Hello Juan');
-(0, _utils.logger)('whats some');
+(0, _utils.logger)('hello world');
 
 },{"./utils":2}],2:[function(require,module,exports){
 "use strict";

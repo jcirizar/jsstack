@@ -1,3 +1,3 @@
 import {logger} from './utils'
 
-logger('Whatever');
+logger('hello world');
