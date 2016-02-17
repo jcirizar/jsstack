@@ -23,8 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-var staticPath = process.env.NODE_ENV === 'production' ? path.join(__dirname, '../../dist') : path.join(__dirname, '../../src');
-//var staticPath = path.join(__dirname, '../../public');
+var staticPath = path.join(__dirname, '../../dist');
 
 app.use(express.static(staticPath));
 

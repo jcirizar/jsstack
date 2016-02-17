@@ -14,4 +14,4 @@
 
 #### Run development
     npm run watch
-    #go to [VPS-IP]:3000
+    #go to [VM-IP]:3000
